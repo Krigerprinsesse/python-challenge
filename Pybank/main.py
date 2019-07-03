@@ -16,15 +16,18 @@ with open(budget_csv) as csvfile:
         float_net = float(row[row_index_net])
         net_total += float_net
 
-        
+    
         total_months.append(row[0])
-        month_over_month.append(float_net -  last_month_p)
+        month_over_month.append(float_net - last_month_p)
         last_month_p = float_net
 
 
 ave_dif = (sum(month_over_month)/(len(month_over_month)))
-print(len(month_over_month))
-print(ave_dif)
-print(net_total)
-print (max(month_over_month))
-print (min(month_over_month))
+
+print ("Financial Analysis")
+print("-------------------------")
+print(f"Total Months: {len(month_over_month)}")
+print(f"Total: $ {net_total}")
+print(f"Average Change $ {ave_dif}")
+print (f"Greatest Increase in Profits: $ {max(month_over_month)}")
+print (f"Greatest Decrease in Profits: $ {min(month_over_month)}")
