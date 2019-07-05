@@ -31,3 +31,15 @@ print(f"Total: $ {net_total}")
 print(f"Average Change $ {ave_dif}")
 print (f"Greatest Increase in Profits: $ {max(month_over_month)}")
 print (f"Greatest Decrease in Profits: $ {min(month_over_month)}")
+
+
+output_path = (r"C:\Users\grace\python-challenge\Pybank\analysis.txt")
+
+with open (output_path, 'w') as file:
+    file.write("Financial Analysis\n")
+    file.write("-------------------------\n")
+    file.write(f"Total Months: {len(month_over_month)}\n")
+    file.write(f"Total: $ {net_total}\n")
+    file.write(f"Average Change $ {ave_dif}\n")
+    file.write(f"Greatest Increase in Profits: $ {max(month_over_month)}\n")
+    file.write(f"Greatest Decrease in Profits: $ {min(month_over_month)}\n")
