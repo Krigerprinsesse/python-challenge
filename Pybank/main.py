@@ -3,6 +3,7 @@ import csv
 
 budget_csv = (r"C:\Users\grace\python-challenge\Pybank\budget_data.csv")
     
+count = 0
 net_total = 0
 row_index_net = 1
 total_months = []
@@ -13,13 +14,20 @@ with open(budget_csv) as csvfile:
     csvreader = csv.reader(csvfile, delimiter=",")
     next(csvreader)
     for row in csvreader:
+        
+
+        total_months.append(row[0])
+
         float_net = float(row[row_index_net])
         net_total += float_net
 
+        
     
-        total_months.append(row[0])
-        month_over_month.append(float_net - last_month_p)
+        if count > 0:
+            month_over_month.append(float_net - last_month_p)
+        count +=1
         last_month_p = float_net
+        
 
 
 ave_dif = (sum(month_over_month)/(len(month_over_month)))
