@@ -25,3 +25,12 @@ print("-----------------")
 print(f"Total Votes: {len(total_votes)}")
 print(f"Candidates: {candidates_list}")
 print(candidates_dict)
+
+output_path = (r"C:\Users\grace\python-challenge\Pypoll\results.txt")
+
+with open (output_path, 'w') as file:
+    file.write("Election Results\n")
+    file.write("-----------------\n")
+    file.write(f"Total Votes: {len(total_votes)}\n")
+    file.write(f"Candidates: {candidates_list}\n")
+    file.write(f"List{candidates_dict}\n")
