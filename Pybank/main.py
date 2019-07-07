@@ -39,9 +39,8 @@ print("-------------------------")
 print(f"Total Months: {len(total_months)}")
 print(f"Total: $ {net_total}")
 print(f"Average Change $ {ave_dif}")
-print (f"Greatest Increase in Profits: $ {max(month_over_month)}")
-print (f"Greatest Decrease in Profits: $ {min(month_over_month)}")
-
+print (f"Greatest Increase in Profits: $ {total_months[np.argmax(month_over_month)+1]} {max(month_over_month)}")
+print (f"Greatest Decrease in Profits: $ {total_months[np.argmin(month_over_month)+1]} {min(month_over_month)}")
 
 output_path = (r"C:\Users\grace\python-challenge\Pybank\analysis.txt")
 
@@ -51,5 +50,5 @@ with open (output_path, 'w') as file:
     file.write(f"Total Months: {len(total_months)}\n")
     file.write(f"Total: $ {net_total}\n")
     file.write(f"Average Change $ {ave_dif}\n")
-    file.write(f"Greatest Increase in Profits: $ {max(month_over_month)}\n")
-    file.write(f"Greatest Decrease in Profits: $ {min(month_over_month)}\n")
+    file.write(f"Greatest Increase in Profits: $ {total_months[np.argmax(month_over_month)+1]} {max(month_over_month)}\n")
+    file.write(f"Greatest Decrease in Profits: $ {total_months[np.argmin(month_over_month)+1]} {min(month_over_month)}")
